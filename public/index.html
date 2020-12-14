@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ccadeef098.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="">
+    <header class="">
+        <img class="object-center mx-auto w-9/12 mt-8 lg:w-6/12" src="assets/logo.png" alt="logo">
+        <h2 class="text-center text-base text-gray-900 font-normal">школа ирландского танца</h2>
+        <div class="text-center pt-4 sm:hidden">
+            <button onclick="toggleMenu()" type="button"
+                class="text-gray-700 focus:text-gray-500 focus:outline-none hover: text-white">
+                <svg class="h-6 w-6" id="burger-icon" viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="10"></rect>
+                    <rect y="30" width="100" height="10"></rect>
+                    <rect y="60" width="100" height="10"></rect>
+                </svg>
+                <svg class="h-6 w-6 hidden" id="x-icon" enable-background="new 0 0 386.667 386.667" height="512"
+                    viewBox="0 0 386.667 386.667" width="512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m386.667 45.564-45.564-45.564-147.77 147.769-147.769-147.769-45.564 45.564 147.769 147.769-147.769 147.77 45.564 45.564 147.769-147.769 147.769 147.769 45.564-45.564-147.768-147.77z" />
+                    </svg>
+            </button>
+        </div>
+        <div class="px-2 py-2 hidden text-center sm:block sm:flex sm:justify-center" id="menu">
+            <a class="block text-gray-900 font-semibold font-accent hover:text-yellow-700 px-2 py-1 mt-1 text-lg" href="#">О
+                школе</a>
+            <a class="block text-gray-900 font-semibold font-accent hover:text-yellow-700 px-2 py-1 mt-1 text-lg"
+                href="#locations">Локации</a>
+            <a class="block text-gray-900 font-semibold font-accent hover:text-yellow-700 px-2 py-1 mt-1 text-lg"
+                href="#schedule">Расписание</a>
+            <a class="block text-gray-900 font-semibold font-accent hover:text-yellow-700 px-2 py-1 mt-1 text-lg"
+                href="#contacts">Контакты</a>
+            <a class="block text-gray-900 font-semibold font-accent hover:text-yellow-700 px-2 py-1 mt-1 text-lg cursor-pointer"
+            onclick="toggleForm()">Записаться</a>
+        </div>
+    </header>
+    <div class="text-center relative">
+        <img class="md:hidden shadow-xl" src="assets/xv5QR1PrGXQ.jpg" alt="">
+        <div class="hero hidden w-full md:block mx-auto md:flex md:items-center md:justify-center ">
+            <div>
+                <h1 class="mt-6 text-4xl lg:text-6xl font-black text-gray-100 leading-tight font-accent">Летайте с нами!
+                </h1>
+                <h3 class="mt-6 text-xl font-medium text-gray-100 leading-tight">Ирландские танцы для детей и взрослых в
+                    Москве</h3>
+                <button onclick="toggleForm()" class="btn">Записаться на занятие</button>
+            </div>
+        </div>
+        <div class="hero-sm md:hidden">
+            <h1 class="mt-6 text-4xl lg:text-6xl font-bold text-gray-900 leading-tight font-accent">Летайте с нами!
+            </h1>
+            <h3 class="mt-6 text-xl font-medium text-gray-900 leading-tight">Ирландские танцы для детей и взрослых в
+                Москве</h3>
+            <button onclick="toggleForm()" class="btn">Записаться на занятие</button>
+        </div>
+        <div id="form-popup" class="bg-white px-8 md:mx-32 hidden flex justify-center absolute top-0 inset-x-0 min-h-full">
+            <div class="w-10/12 md:max-w-md" id="sign-form">
+                <h3 class="mt-4 text-2xl font-medium text-gray-900 leading-tight text-center py-8 font-bold">Записаться на занятия</h3>
+                <form action="#" method="POST" class="text-left">
+                  <p class="pb-4">После заполнения формы мы свяжемся с вами и расскажем все подробности обучения.</p>
+        
+                  <label class="mt-2" for="name"><b>Ваше имя</b></label>
+                  <input type="text" class="w-full my-2 py-2 bg-gray-200 rounded shadow-sm focus:outline-none focus:ring" placeholder="Введите имя" name="name" required>
+        
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" class="w-full my-2 py-2 bg-gray-200 rounded shadow-sm focus:outline-none focus:ring" placeholder="Введите Email" name="email" required>
+        
+                  <label for="phone"><b>Телефон</b></label>
+                  <input type="text" class="w-full my-2 py-2 bg-gray-200 rounded shadow-sm focus:outline-none focus:ring" placeholder="Введите номер телефона" name="phone">
+        
+                  <label for="message"><b>Если вы записываете ребенка, укажите имя и возраст ребенка.</b></label>
+                  <textarea class="w-full my-2 py-2 bg-gray-200 rounded shadow-sm focus:outline-none focus:ring" placeholder="" name="message"></textarea>
+    
+                  <div class="flex justify-around">
+                    <button type="submit" class="btn">Записаться</button>
+                    <button type="button" class="btn bg-gray-400" onclick="toggleForm()">Закрыть</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+    </div>
+    <div class="px-8 text-center md:flex md:items-center md:justify-center md:mt-8 md:mx-32">
+        <div>
+            <p class=""><i class="fas fa-heartbeat fa-3x bg-gray-200 rounded-full px-6 py-6"></i></p>
+            <h3 class="mt-4 text-2xl font-medium text-gray-900 leading-tight">Спорт</h3>
+            <p class=" text-lg px-4 py-4">Приведите себя в хорошую физическую форму</p>
+        </div>
+        <div>
+            <i class="fas fa-trophy fa-3x bg-gray-200 rounded-full px-6 py-6"></i>
+            <h3 class="mt-4 text-2xl font-medium text-gray-900 leading-tight">Соревнования</h3>
+            <p class=" text-lg px-4 py-4">Побеждайте с нами на международных чемпионатах</p>
+        </div>
+        <div>
+            <i class="fas fa-laugh-beam fa-3x bg-gray-200 rounded-full px-6 py-6"></i>
+            <h3 class="mt-4 text-2xl font-medium text-gray-900 leading-tight">Команда</h3>
+            <p class=" text-lg px-4 py-4">Станьте частью большой танцевальной семьи</p>
+        </div>
+    </div>
+    <div id="locations" class="px-4 my-8 md:mx-32">
+        <h3 class="mt-4 text-2xl font-bold text-gray-900 leading-tight text-center py-8">Где проходят занятия</h3>
+        <div class="md:flex md:items-center md:justify-between">
+            <div class="md:px-4 md:w-1/2 xl:ml-auto">
+                <p class="text-lg py-4 text-center">Зал "Академическая": м. Академическая, ул. Шверника, дом 13, корпус
+                    2. Досуговый центр "Академический".</p>
+                <div class="container mx-auto"><iframe class="md:mx-auto md:w-10/12"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.783032911113!2d37.58828702654634!3d55.692759818086586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54ca230b64fbd%3A0x8e921159522ced24!2z0YPQuy4g0KjQstC10YDQvdC40LrQsCwgMTMg0LrQvtGA0L_Rg9GBIDIsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMTc0NDk!5e0!3m2!1sru!2sus!4v1607460678019!5m2!1sru!2sus"
+                        width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe></div>
+            </div>
+            <div class="md:px-4 md:w-1/2 xl:ml-auto">
+                <p class="text-lg py-4 text-center">Зал "Беляево-Аванти": м. Беляево, ул. Миклухо-Маклая, 18/1, корп. 1,
+                    стр. 1, 3 этаж</p>
+                <div class="container mx-auto"><iframe class="md:mx-auto md:w-10/12"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9005.982865983884!2d37.5178385!3d55.6455865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80870d0b7394decd!2z0KjQutC-0LvQsCDQmNGB0LrRg9GB0YHRgtCyICLQkNCy0LDQvdGC0Lgi!5e0!3m2!1sru!2sus!4v1607461428857!5m2!1sru!2sus"
+                        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe></div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="px-8 my-8 md:mx-32">
+        <h3 id="schedule"  class="mt-4 text-2xl font-medium text-gray-900 leading-tight text-center py-8 font-bold">Расписание занятий
+        </h3>
+        <div class="px-2 py-2 text-center sm:block sm:flex sm:justify-center" id="menu">
+            <button id="adults-link" onclick="toggleSchedule()"
+                class="block text-gray-900 font-semibold font-accent hover:bg-gray-200 px-2 py-1 mt-1  focus:outline-none text-yellow-700"
+                href="#">Взрослые группы</button>
+            <button id="kids-link" onclick="toggleSchedule()"
+                class="block text-gray-900 font-semibold font-accent hover:bg-gray-200 px-2 py-1 mt-1 focus:outline-none"
+                href="#">Детские группы</button>
+        </div>
+        <table id="adults-schedule"
+            class="table-fixed my-4 border-collapse border border-gray-400 text-gray-900 text-medium mx-auto rounded-sm text-center md:w-8/12 text-xs lg:text-base">
+            <thead>
+                <tr>
+                    <th class="w-2/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4"></th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4 ">Beginners</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Primary</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Open</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Ceili</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Понедельник</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">20:30</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-200 text-left px-2 py-2">Вторник</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2">19:00</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Среда</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300  bg-gray-200 text-left px-2 py-2">Четверг</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2">19:00</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Пятница</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">19:30</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300  bg-gray-200 text-left px-2 py-2">Суббота</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Воскресенье</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">14:30</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">11:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">13:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="kids-schedule"
+            class="table-fixed my-4 border-collapse border border-gray-400 text-gray-900 text-medium mx-auto rounded-sm text-center md:w-8/12 text-xs md:text-base hidden">
+            <thead>
+                <tr>
+                    <th class="w-2/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4"></th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4 ">Beginners</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Primary</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Open</th>
+                    <th class="w-1/6 ... border border-gray-300 text-gray-700 bg-gray-200 py-4">Ceili</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Понедельник</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">17:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">18:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">19:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-200 text-left px-2 py-2">Вторник</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Среда</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">17:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">18:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2">19:00</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300  bg-gray-200 text-left px-2 py-2">Четверг</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Пятница</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300  bg-gray-200 text-left px-2 py-2">Суббота</td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                    <td class="border border-gray-300  bg-gray-200 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 bg-gray-100 text-left px-2 py-2">Воскресенье</td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                    <td class="border border-gray-300 bg-gray-100 py-2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="contacts" class="px-8 my-4 md:mx-32">
+        <h3 class="mt-4 text-2xl font-medium text-gray-900 leading-tight text-center py-8 font-bold">Контакты</h3>
+        <p class="text-md py-4">Узнать стоимость занятий, записаться и задать любые другие вопросы можно по электронной
+            почте:
+
+            <span class="text-yellow-600 font-bold">info@ceimoir.ru</span>.</p>
+        <p class="text-center"> <a href="https://www.instagram.com/ceimoir_russia/"> <i
+                    class="fab fa-instagram fa-2x px-6 py-6"></i></a> <a
+                href="https://www.facebook.com/ceimoir.russia/"><i
+                    class="fab fa-facebook-square fa-2x px-4 py-4"></i></a>
+        </p>
+    </div>
+  
+   
+</body>
+<script src="build/toggles.js"></script>
+
+</html>
